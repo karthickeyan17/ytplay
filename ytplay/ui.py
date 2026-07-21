@@ -3,16 +3,20 @@ from utils import format_views, format_duration
 from shutil import get_terminal_size
 import os
 
+WIDTH = get_terminal_size().columns
+
 def clear_screen():
     os.system('clear')
 
+def hLine():
+    print("-"*WIDTH)
+
 def display_results(query:str,videos:[Video])->None :
-    WIDTH = get_terminal_size().columns
     print()
 
-    print("-"*WIDTH)
+    hLine()
     print(f"search : {query}")
-    print("-"*WIDTH)
+    hLine()
 
     for index, video  in enumerate(videos, start=1):
         print(f"{index:2} │ {video.title}")
@@ -25,23 +29,22 @@ def display_results(query:str,videos:[Video])->None :
         )
         print()
 
-    print("─" * WIDTH)
+    hLine()
 
-
-def ask_choice(max_choice:int)->int|None :
+def ask_choice(videos:list[Video])->Video|None :
     while True:
         choice = input(
-                f"select [1-{max_choice}] "
+                f"select [1-{len(videos)}] "
                 "(Enter=1,q=quit): "
                 ).strip()
         if choice=="":
-            return 1
+            return videos[0]
         if choice.lower()=='q':
             return None
         if choice.isdigit():
             value=int(choice)
-            if 1<=value<=max_choice :
-                return value
+            if 1<=value<=len(videos) :
+                return videos[value-1]
 
         print("Invalid Choice!!!")
 

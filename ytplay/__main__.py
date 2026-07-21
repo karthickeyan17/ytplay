@@ -1,5 +1,6 @@
 from search import search
 from ui import display_results, ask_choice, clear_screen
+from player import play
 
 query = input("Search: ")
 
@@ -9,6 +10,7 @@ clear_screen()
 
 display_results(query, videos)
 
-choice = ask_choice(len(videos))
+selection = ask_choice(videos)
 
-print(choice)
+if selection:
+    play(selection)
