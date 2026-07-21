@@ -1,0 +1,16 @@
+README.md
+pyproject.toml
+ytplay/__init__.py
+ytplay/__main__.py
+ytplay/cli.py
+ytplay/models.py
+ytplay/player.py
+ytplay/search.py
+ytplay/ui.py
+ytplay/utils.py
+ytplay.egg-info/PKG-INFO
+ytplay.egg-info/SOURCES.txt
+ytplay.egg-info/dependency_links.txt
+ytplay.egg-info/entry_points.txt
+ytplay.egg-info/requires.txt
+ytplay.egg-info/top_level.txt

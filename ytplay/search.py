@@ -1,6 +1,6 @@
 import yt_dlp
 #from pprint import pprint
-from models import Video
+from .models import Video
 
 def search(keyword: str, limit: int=10) -> list[Video]:
     opts = {

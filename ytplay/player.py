@@ -1,5 +1,5 @@
 import subprocess
-from models import Video
+from .models import Video
 
 def play(video:Video)->None:
 

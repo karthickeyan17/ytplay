@@ -1,0 +1,12 @@
+[project]
+name="ytplay"
+version="0.1.0"
+description="Search and play Youtube  videos using mpv"
+requires-python= ">=3.11"
+
+dependencies = [
+    "yt-dlp"
+]
+
+[project.scripts]
+ytplay = "ytplay.__main__:main"

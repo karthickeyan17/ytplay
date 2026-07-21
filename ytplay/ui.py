@@ -1,5 +1,5 @@
-from models import Video
-from utils import format_views, format_duration
+from .models import Video
+from .utils import format_views, format_duration
 from shutil import get_terminal_size
 import os
 
